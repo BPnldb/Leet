@@ -1,0 +1,36 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def isPalindrome(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+#         vals = []
+        
+#         current = head
+#         while current:
+#             vals.append(current.val)
+#             current = current.next
+#         return vals == vals[::-1]
+
+
+        nums = []
+        #traverses the the linked list and appends it onto the list/array
+        while head:
+            nums.append(head.val)
+            head=head.next
+            
+        #two pointer method using left and right
+        #so at this point, you already inputed everything into the list/array
+        left = 0
+        right = len(nums) -1
+        while left <= right:
+            if nums[left] != nums[right]:
+                return False
+            left+=1
+            right-=1
+        return True
