@@ -1,0 +1,19 @@
+class Solution(object):
+    def destCity(self, paths):
+            """
+            :type paths: List[List[str]]
+            :rtype: str
+            """
+
+
+            dic = {}
+            for path in paths:
+                for i, city in enumerate(path):
+                    if i == 0:
+                        dic[city] = dic.get(city, 0) -1
+                    else:
+                        dic[city] = dic.get(city, 0) 
+
+            for key in dic:
+                if dic[key] == 0:
+                    return key
