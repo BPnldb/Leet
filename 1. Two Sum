@@ -1,0 +1,9 @@
+class Solution():
+    def twoSum(self,nums, target):
+        dic = {}
+        for k,v in enumerate(nums):
+            difference = target-v
+            if difference not in dic:
+                dic[v] = k
+            else:
+                return [dic[difference],k]
